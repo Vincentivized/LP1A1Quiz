@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win a $500 Amazon Gift Card</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+        .section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .hero {
+            background: #fff;
+        }
+        .hero img {
+            max-width: 300px;
+            width: 100%;
+            margin: 20px 0;
+        }
+        h1 {
+            font-size: 28px;
+            color: #222;
+        }
+        h2 {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #28a745;
+        }
+        .btn-start {
+            background: #FF9900;
+        }
+        .btn-quiz {
+            background: #111;
+        }
+        .spinner {
+            margin: 30px auto;
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #FF9900;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        footer {
+            font-size: 12px;
+            padding: 20px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="section hero" id="hero">
+        <h1>🎁 Your Chance To Win A <span style="color: #28a745;">$500</span> Amazon Gift Card!</h1>
+        <p style="color: #c00; font-weight: bold;">( Update: Only 8 cards left! )</p>
+        <h2>Press START to confirm your chance</h2>
+        <img src="https://images.unsplash.com/photo-1588776814546-bd1b83865dce?fit=crop&w=500&h=300" alt="Amazon Gift Card">
+        <a href="#quiz1" class="btn btn-start">START ➜</a>
+    </div>
+
+    <!-- Quiz 1 -->
+    <div class="section" id="quiz1">
+        <p style="color:#0071e3; font-weight: bold;">QUESTION 1 OF 3</p>
+        <h2>Have you ever won something?</h2>
+        <a href="#quiz2" class="btn btn-quiz">Yes</a>
+        <a href="#quiz2" class="btn btn-quiz">No</a>
+    </div>
+
+    <!-- Quiz 2 -->
+    <div class="section" id="quiz2">
+        <p style="color:#0071e3; font-weight: bold;">QUESTION 2 OF 3</p>
+        <h2>Are you interested in free gifts?</h2>
+        <a href="#quiz3" class="btn btn-quiz">Yes</a>
+        <a href="#quiz3" class="btn btn-quiz">No</a>
+    </div>
+
+    <!-- Quiz 3 -->
+    <div class="section" id="quiz3">
+        <p style="color:#0071e3; font-weight: bold;">QUESTION 3 OF 3</p>
+        <h2>Do you shop on Amazon?</h2>
+        <a href="#loading" class="btn btn-quiz">Yes</a>
+        <a href="#loading" class="btn btn-quiz">No</a>
+    </div>
+
+    <!-- Loading Section -->
+    <div class="section" id="loading">
+        <h2>Verifying your answers… Please wait.</h2>
+        <div class="spinner"></div>
+    </div>
+
+    <footer>
+        This promotion is not affiliated with or sponsored by Amazon. Participation is subject to Terms & Privacy Policy.
+    </footer>
+
+    <!-- Redirect Script -->
+    <script>
+        const loadingSection = document.getElementById('loading');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        window.location.href = "https://example.com"; // Dummy URL to replace later
+                    }, 3000);
+                }
+            });
+        });
+        observer.observe(loadingSection);
+    </script>
+</body>
+</html>
